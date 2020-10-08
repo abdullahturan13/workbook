@@ -125,3 +125,19 @@ char c[ ] = {’c’, ’a’, ’t’};
 char* p = c; // p points to c[0]
 char* q = &c[0]; // q also points to c[0]
 cout << c[2] << p[2] << q[2]; // outputs “ttt”
+
+
+### Strings
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+    string s = " to be ";
+    string t = "not" + s;
+    string u = s + "or " + t;
+    cout<<u;
+}
+/**OUTPUT:
+to be or not to be
+*/
