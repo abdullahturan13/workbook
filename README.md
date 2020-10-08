@@ -1,2 +1,2 @@
 # workbook
-workbook for c++
+This project is my workbook while i learn c++
