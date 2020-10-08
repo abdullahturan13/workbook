@@ -1,8 +1,97 @@
-In addition to associating names with constants, it is often useful to associate a name with a type. This association can be done with a **typedef** declaration. Rather than declaring a variable, a typedef defines a new type name.
+### Enumerations
 
-```cpp
-typedef char* BufferPtr; // type BufferPtr is a pointer to char
-typedef double Coordinate; // type Coordinate is a double
-BufferPtr p; // p is a pointer to char
-Coordinate x, y; // x and y are of type double
-```
+An enumeration is a user-defined type that can hold any of a set of discrete values.
+
+Once defined, enumerations behave much like an integer type. A common use of enumerations is to provide meaningful names to a set of related values.
+
+Each element of an enumeration is associated with an integer value.
+
+blackslash ( \ ) is used to specify a number of a special character literals:
+
+’\n’ newline
+’\t’ tab
+’\b’ backspace
+’\0’ null
+’\’’ single quote
+’\"’ double quote
+’\\’ backslash
+
+The null character, ’\0’, is sometimes used to indicate the end of a string of characters.
+
+short n; // n’s value is undefined
+int octalNumber = 0400; //400 (base 8) = 256 (base 10)
+char newline character = ’\n’;
+long BIGnumber = 314159265L;
+short aSTRANGE 1234 variABlE NaMe;
+
+
+### Enumerations
+
+An enumeration is a user-defined type that can hold any of a set of discrete values.
+
+Once defined, enumerations behave much like an integer type. A common use of enumerations is to provide meaningful names to a set of related values.
+
+Each element of an enumeration is associated with an integer value.
+
+enum Day { SUN, MON, TUE, WED, THU, FRI, SAT };
+enum Mood { HAPPY = 3, SAD = 1, ANXIOUS = 4, SLEEPY = 2 };
+Day today = THU; // today may be any of MON . . . SAT
+Mood myMood = SLEEPY; // myMood may be HAPPY, . . ., SLEEPY
+
+
+
+Since we did not specify values, SUN would be associated with 0, MON with 1, and so on.
+
+### Pointers
+
+address-of operator, &.
+
+For example if x is an integer variable in your program &x is the address of x in memory.
+
+Accessing an object’s value from its address is called dereferencing. This is done using the * operator.
+
+For example, if we were to declare q to be a pointer to an integer (that is, int*) and then set q = &x, we could access x’s value with *q.
+
+
+char ch = ’Q’;
+char* p = &ch; // p holds the address of ch
+cout << *p; // outputs the character ’Q’
+ch = ’Z’; // ch now holds ’Z’
+cout << *p; // outputs the character ’Z’
+*p = ’X’; // ch now holds ’X’
+cout << ch; // outputs the character ’X’
+
+We shall see that pointers are very useful when building data structures where objects are linked to one another through the use of pointers.
+
+**Beware when declaring two or more pointers on the same line.**
+
+The * operator Caution binds with the variable name, not with the type name.
+
+
+int* x, y, z; // same as: int* x; int y; int z;
+
+This declares one pointer variable x, but the other two variables are plain integers.
+
+The simplest way to avoid this confusion is to declare one variable per statement
+
+
+char ch = ’Q’;
+char* p = &ch; // p holds the address of ch
+cout << *p; // outputs the character ’Q’
+ch = ’Z’; // ch now holds ’Z’
+cout << *p; // outputs the character ’Z’
+*p = ’X’; // ch now holds ’X’
+cout << ch; // outputs the character ’X’
+
+We shall see that pointers are very useful when building data structures where objects are linked to one another through the use of pointers.
+
+**Beware when declaring two or more pointers on the same line.**
+
+The * operator Caution binds with the variable name, not with the type name.
+
+
+int* x, y, z; // same as: int* x; int y; int z;
+
+This declares one pointer variable x, but the other two variables are plain integers.
+
+The simplest way to avoid this confusion is to declare one variable per statement..
