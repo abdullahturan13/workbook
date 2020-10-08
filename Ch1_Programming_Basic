@@ -1,0 +1,8 @@
+In addition to associating names with constants, it is often useful to associate a name with a type. This association can be done with a **typedef** declaration. Rather than declaring a variable, a typedef defines a new type name.
+
+```cpp
+typedef char* BufferPtr; // type BufferPtr is a pointer to char
+typedef double Coordinate; // type Coordinate is a double
+BufferPtr p; // p is a pointer to char
+Coordinate x, y; // x and y are of type double
+```
